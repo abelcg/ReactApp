@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Table from "./Table";
+import Form from "./Form";
+import Title from "./Title"
+import Subtitle from "./Subtitle"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
+  const characters = [];
+  const [ArrayCharacters, setCharacters] = useState(characters);
+
+  const removeCharacter = (index) => {
+    setCharacters(
+      ArrayCharacters.filter((character, i) => {
+        return i !== index;
+      })
+    );
+  };
+
+  const handleSubmit = (e ,character) => {
+    e.preventDefault();
+    setCharacters([...ArrayCharacters, character]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Title/>
+      <Subtitle />
+      <Table
+        characterData={ArrayCharacters}
+        removeCharacter={removeCharacter}
+      />
+      <Form handleSubmit={handleSubmit} />
     </div>
   );
-}
+};
 
 export default App;
