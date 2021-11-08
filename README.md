@@ -5,7 +5,7 @@ APP to practice the fundamentals of React including stateless, simple and class 
 This project is based on the tutorial made by [Tania Rascia](https://www.taniarascia.com) | [Read the tutorial](https://www.taniarascia.com/getting-started-with-react/)
 
 
-### [View the demo](https://taniarascia.github.io/react-tutorial/) 
+### [View the demo](https://abelcg.github.io/ReactApp/) 
 ## Purpose
 
 - To practice on essential React concepts and related terms, such as Babel, Webpack, JSX, components, props, state, and lifecycle.
